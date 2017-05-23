@@ -4,13 +4,13 @@ var app = angular
 app
   .controller('AuthenticationCtrl', function($scope, $state, AdminAuthentication) {
     $scope.handleSignIn = function(loginForm) {
-      Authentication.signin(loginForm, function(){
+      AdminAuthentication.signin(loginForm, function(){
         $state.go('home');
         console.log("HI!!!");
       });
     };
 
     $scope.handleSignOutBtnClick = function() {
-      Authentication.signout();
+      AdminAuthentication.signout();
     };
   });
