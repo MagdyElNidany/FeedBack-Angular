@@ -3,9 +3,16 @@ var app = angular
 
 app
   .config(function($authProvider, $locationProvider) {
-      $authProvider
-        .configure({
-          apiUrl: 'http://localhost:3000'
-        });
+      $authProvider.configure([{
+          default: {
+            apiUrl: 'http://localhost:3000'
+          }
+        }, {
+          admin: {
+            apiUrl: 'http://localhost:3000/admin'
+          }
+        }
+      ]);
+
       $locationProvider.html5Mode(true);
     });
