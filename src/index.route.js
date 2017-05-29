@@ -28,4 +28,14 @@ app
           url: '/prog_manager/invitation/accept/:token',
           templateUrl: 'app/views/prog_managers/accept_invitation.html'
         });
+        $stateProvider
+          .state('attendee_invitation', {
+            url: '/admin/attendees/invite',
+            templateUrl: 'app/views/admin/attendees/invite.html'
+          });
+        $stateProvider
+          .state('attendee_accept_invitation', {
+            url: '/attendee/invitation/accept/:token',
+            templateUrl: 'app/views/attendees/accept_invitation.html'
+          });
       });

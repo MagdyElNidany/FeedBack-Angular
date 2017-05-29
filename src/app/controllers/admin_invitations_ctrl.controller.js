@@ -13,4 +13,28 @@ app
         console.log(resp);
       });
     }
+    $scope.inviteAttendee = function(invitation) {
+      $http.post(
+        "http://localhost:3000/admin/attendee/invitations", 
+        { attendee: invitation }
+      ).then(function(resp){
+        console.log(resp);
+      }).catch(function(resp){
+        console.log(resp);
+      });
+    }
   });
+
+// app
+//   .controller('AdminInvitationsCtrl', function($scope, $state, $http) {
+//     $scope.inviteAttendee = function(invitation) {
+//       $http.post(
+//         "http://localhost:3000/admin/attendee/invitations", 
+//         { attendee: invitation }
+//       ).then(function(resp){
+//         console.log(resp);
+//       }).catch(function(resp){
+//         console.log(resp);
+//       });
+//     }
+//   });
