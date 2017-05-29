@@ -1,9 +1,9 @@
 var app = angular
   .module('feedbackapp');
 
-app.factory('AdminAuthentication', function($auth) {
+app.factory('MentorAuthentication', function($auth) {
   var config = {
-    config: 'admin'
+    config: 'mentor'
   }
 
   var user = {

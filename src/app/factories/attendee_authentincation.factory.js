@@ -1,15 +1,13 @@
 var app = angular
   .module('feedbackapp');
 
-app.factory('AdminAuthentication', function($auth) {
-  var config = {
-    config: 'admin'
-  }
+app.factory('AttendeeAuthentication', function($auth){
+  var config = { config: 'default' }
 
   var user = {
     signedIn: false,
     object: {},
-    signin: function(loginForm, successfulLogin, failedLogin) {
+    signin: function(loginForm, successfulLogin, failedLogin){
       var self = this;
 
       $auth.submitLogin(loginForm, config)
@@ -23,7 +21,7 @@ app.factory('AdminAuthentication', function($auth) {
           failedLogin();
         });
     },
-    signout: function() {
+    signout: function(){
       $auth.signOut(config)
         .then(function(resp) {
           // handle success response
