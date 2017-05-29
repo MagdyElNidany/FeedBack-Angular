@@ -28,9 +28,4 @@ app
           url: '/prog_manager/invitation/accept/:token',
           templateUrl: 'app/views/prog_managers/accept_invitation.html'
         });
-        $stateProvider
-          .state('prog_manager_submit_form', {
-            url: '/',
-            templateUrl: 'app/views/home/index.html'
-          })
       });
