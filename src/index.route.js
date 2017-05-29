@@ -26,6 +26,16 @@ app
       $stateProvider
         .state('prog_manager_accept_invitation', {
           url: '/prog_manager/invitation/accept/:token',
-          templateUrl: 'app/views/prog_managers/accept_invitation.html'
+          templateUrl: 'app/views/prog_managers/manage_accept_invitation.html'
+        });
+        $stateProvider
+        .state('mentor_invitation', {
+          url: '/admin/mentor/invite',
+          templateUrl: 'app/views/admin/mentors/invite.html'
+        });
+        $stateProvider
+        .state('mentor_accept_invitation', {
+          url: '/mentor/invitation/accept/:token',
+          templateUrl: 'app/views/mentors/accept_invitation.html'
         });
       });
