@@ -9,16 +9,6 @@ app
           templateUrl: 'app/views/home/index.html'
         });
       $stateProvider
-        .state('signin', {
-          url: '/admin/signin',
-          templateUrl: 'app/views/admin/authentication/signin.html'
-        });
-      $stateProvider
-        .state('signout', {
-          url: '/admin/signout',
-          templateUrl: 'app/views/admin/authentication/signout.html'
-        });
-      $stateProvider
         .state('prog_manager_invitation', {
           url: '/admin/prog_managers/invite',
           templateUrl: 'app/views/admin/prog_managers/invite.html'
@@ -26,7 +16,22 @@ app
       $stateProvider
         .state('prog_manager_accept_invitation', {
           url: '/prog_manager/invitation/accept/:token',
-          templateUrl: 'app/views/prog_managers/manage_accept_invitation.html'
+          templateUrl: 'app/views/prog_managers/accept_invitation.html'
+        });
+      $stateProvider
+        .state('admin_signin', {
+          url: '/admin/signin',
+          templateUrl: 'app/views/admin/authentication/signin.html'
+        });
+      $stateProvider
+        .state('admin_signout', {
+          url: '/admin/signout',
+          templateUrl: 'app/views/admin/authentication/signout.html'
+        });
+      $stateProvider
+        .state('signin', {
+          url: '/signin',
+          templateUrl: 'app/views/authentication/signin.html'
         });
         $stateProvider
         .state('mentor_invitation', {
@@ -38,30 +43,14 @@ app
           url: '/mentor/invitation/accept/:token',
           templateUrl: 'app/views/mentors/accept_invitation.html'
         });
-      });
-    $stateProvider
-      .state('admin_signin', {
-        url: '/admin/signin',
-        templateUrl: 'app/views/admin/authentication/signin.html'
-      });
-    $stateProvider
-      .state('admin_signout', {
-        url: '/admin/signout',
-        templateUrl: 'app/views/admin/authentication/signout.html'
-      });
-    $stateProvider
-      .state('signin', {
-        url: '/signin',
-        templateUrl: 'app/views/authentication/signin.html'
-      });
-    $stateProvider
-      .state('mentor_signin', {
-        url: '/signin',
-        templateUrl: 'app/views/mentor/authentication/signin.html'
-      });
-    $stateProvider
-      .state('progmanager_signin', {
-        url: '/signin',
-        templateUrl: 'app/views/program_manager/authentication/signin.html'
-      });
+        $stateProvider
+        .state('mentor_signin', {
+          url: '/signin',
+          templateUrl: 'app/views/mentor/authentication/signin.html'
+        });
+      $stateProvider
+        .state('progmanager_signin', {
+          url: '/signin',
+          templateUrl: 'app/views/program_manager/authentication/signin.html'
+        });
   });
