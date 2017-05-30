@@ -33,7 +33,17 @@ app
           url: '/signin',
           templateUrl: 'app/views/authentication/signin.html'
         });
-      $stateProvider
+        $stateProvider
+        .state('mentor_invitation', {
+          url: '/admin/mentor/invite',
+          templateUrl: 'app/views/admin/mentors/invite.html'
+        });
+        $stateProvider
+        .state('mentor_accept_invitation', {
+          url: '/mentor/invitation/accept/:token',
+          templateUrl: 'app/views/mentors/accept_invitation.html'
+        });
+        $stateProvider
         .state('mentor_signin', {
           url: '/signin',
           templateUrl: 'app/views/mentor/authentication/signin.html'
