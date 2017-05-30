@@ -43,4 +43,14 @@ app
           url: '/signin',
           templateUrl: 'app/views/program_manager/authentication/signin.html'
         });
-  });
+        $stateProvider
+          .state('attendee_invitation', {
+            url: '/admin/attendees/invite',
+            templateUrl: 'app/views/admin/attendees/invite.html'
+          });
+        $stateProvider
+          .state('attendee_accept_invitation', {
+            url: '/attendee/invitation/accept/:token',
+            templateUrl: 'app/views/attendees/accept_invitation.html'
+          });
+      });
