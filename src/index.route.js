@@ -33,34 +33,44 @@ app
           url: '/signin',
           templateUrl: 'app/views/authentication/signin.html'
         });
-        $stateProvider
+      $stateProvider
         .state('mentor_invitation', {
           url: '/admin/mentor/invite',
           templateUrl: 'app/views/admin/mentors/invite.html'
         });
-        $stateProvider
+      $stateProvider
         .state('mentor_accept_invitation', {
           url: '/mentor/invitation/accept/:token',
           templateUrl: 'app/views/mentors/accept_invitation.html'
         });
-        $stateProvider
+      $stateProvider
         .state('mentor_signin', {
-          url: '/signin',
-          templateUrl: 'app/views/mentor/authentication/signin.html'
+          url: '/mentors/signin',
+          templateUrl: 'app/views/mentors/authentication/signin.html'
         });
+      $stateProvider
+        .state('mentor_signout', {
+          url: '/mentors/signout',
+          templateUrl: 'app/views/mentors/authentication/signout.html'
+        });
+      // $stateProvider
+      //   .state('prog_manager_invitation', {
+      //     url: '/admin/prog_managers/invite',
+      //     templateUrl: 'app/views/admin/prog_managers/invite.html'
+      //   });
       $stateProvider
         .state('progmanager_signin', {
           url: '/signin',
           templateUrl: 'app/views/program_manager/authentication/signin.html'
         });
-        $stateProvider
+      $stateProvider
           .state('attendee_invitation', {
             url: '/admin/attendees/invite',
             templateUrl: 'app/views/admin/attendees/invite.html'
-          });
-        $stateProvider
+        });
+      $stateProvider
           .state('attendee_accept_invitation', {
             url: '/attendee/invitation/accept/:token',
             templateUrl: 'app/views/attendees/accept_invitation.html'
-          });
+        });
       });

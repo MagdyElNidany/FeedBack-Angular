@@ -5,7 +5,7 @@ app
   .controller('AdminAuthenticationCtrl', function($scope, $state, AdminAuthentication) {
     $scope.handleSignIn = function(loginForm) {
       AdminAuthentication.signin(loginForm, function(){
-        $state.go('mentor_invitation');
+        $state.go('home');
         console.log("HI!!!");
       }, function(){
         console.log('emshy men hena yala');

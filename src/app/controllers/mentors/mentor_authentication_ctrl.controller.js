@@ -2,9 +2,9 @@ var app = angular
   .module('feedbackapp');
 
 app
-    .controller('MentorAuthenticationCtrl', function($scope, $state, AdminAuthentication) {
+  .controller('MentorAuthenticationCtrl', function($scope, $state, MentorAuthentication) {
     $scope.handleSignIn = function(loginForm) {
-      AdminAuthentication.signin(loginForm, function(){
+      MentorAuthentication.signin(loginForm, function(){
         $state.go('home');
         console.log("HI!!!");
       }, function(){
@@ -13,6 +13,6 @@ app
     };
 
     $scope.handleSignOutBtnClick = function() {
-      AdminAuthentication.signout();
+      MentorAuthentication.signout();
     };
   });

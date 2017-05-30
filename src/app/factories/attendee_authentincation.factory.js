@@ -2,7 +2,9 @@ var app = angular
   .module('feedbackapp');
 
 app.factory('AttendeeAuthentication', function($auth){
-  var config = { config: 'default' }
+  var config = { 
+    config: 'default'
+   }
 
   var user = {
     signedIn: false,
