@@ -13,4 +13,14 @@ app
         console.log(resp);
       });
     }
+    $scope.inviteMentor = function(invitation) {
+      $http.post(
+        "http://localhost:3000/admin/mentor/invitations", 
+        { mentor: invitation }
+      ).then(function(resp){
+        console.log(resp);
+      }).catch(function(resp){
+        console.log(resp);
+      });
+    }
   });
