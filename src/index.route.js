@@ -2,7 +2,7 @@ var app = angular
   .module('feedbackapp');
 
 app
-  .config(function($stateProvider) {
+  .config(function($stateProvider, $urlRouterProvider) {
       $stateProvider
         .state('home', {
           url: '/',
@@ -31,7 +31,7 @@ app
       $stateProvider
         .state('signin', {
           url: '/signin',
-          templateUrl: 'app/views/authentication/signin.html'
+          templateUrl: 'app/views/attendees/authentication/signin.html'
         });
       $stateProvider
         .state('mentor_invitation', {
@@ -59,9 +59,19 @@ app
       //     templateUrl: 'app/views/admin/prog_managers/invite.html'
       //   });
       $stateProvider
-        .state('progmanager_signin', {
-          url: '/signin',
-          templateUrl: 'app/views/program_manager/authentication/signin.html'
+        .state('mentor_program_page', {
+          url: '/mentors/program_page',
+          templateUrl: 'app/views/mentors/program_page.html'
+        });
+      $stateProvider
+        .state('prog_manager_signin', {
+          url: '/prog_managers/signin',
+          templateUrl: 'app/views/prog_managers/authentication/signin.html'
+        });
+        $stateProvider
+        .state('prog_manager_signout', {
+          url: '/prog_managers/signout',
+          templateUrl: 'app/views/prog_managers/authentication/signout.html'
         });
       $stateProvider
           .state('attendee_invitation', {
@@ -73,4 +83,5 @@ app
             url: '/attendee/invitation/accept/:token',
             templateUrl: 'app/views/attendees/accept_invitation.html'
         });
+      $urlRouterProvider.otherwise('/')
       });

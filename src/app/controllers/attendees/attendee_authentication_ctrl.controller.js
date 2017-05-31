@@ -2,9 +2,9 @@ var app = angular
   .module('feedbackapp');
 
 app
-    .controller('ProgManagerAuthenticationCtrl', function($scope, $state, ProgManagerAuthentication) {
+  .controller('AttendeeAuthenticationCtrl', function($scope, $state, AttendeeAuthentication) {
     $scope.handleSignIn = function(loginForm) {
-      ProgManagerAuthentication.signin(loginForm, function(){
+      AttendeeAuthentication.signin(loginForm, function(){
         $state.go('home');
         console.log("HI!!!");
       }, function(){
@@ -13,6 +13,6 @@ app
     };
 
     $scope.handleSignOutBtnClick = function() {
-      ProgManagerAuthentication.signout();
+      AttendeeAuthentication.signout();
     };
   });

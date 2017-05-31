@@ -5,7 +5,7 @@ app
   .controller('MentorAuthenticationCtrl', function($scope, $state, MentorAuthentication) {
     $scope.handleSignIn = function(loginForm) {
       MentorAuthentication.signin(loginForm, function(){
-        $state.go('home');
+        $state.go('mentor_program_page');
         console.log("HI!!!");
       }, function(){
         console.log('emshy men hena yala');

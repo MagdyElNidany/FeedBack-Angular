@@ -2,7 +2,7 @@ var app = angular
   .module('feedbackapp');
 
 app
-  .controller('AuthenticationCtrl', function($scope, $state, AdminAuthentication) {
+  .controller('AuthenticationCtrl', function($scope, $state, Authentication) {
     $scope.handleSignIn = function(loginForm) {
       //AdminAuthentication.signin(loginForm, function(){
         //$state.go('prog_manager_invitation');
