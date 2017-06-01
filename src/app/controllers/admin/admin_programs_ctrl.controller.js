@@ -15,11 +15,23 @@ app
       });
     }
 
+    $scope.new_program = function(program) {
+      $scope.get_prog_managers();
+    }
+
     $scope.create_program = function(program){
       AdminProgramsFactory.create(program, function(successResp){
         $state.go('admin.program', { id: successResp.data.id });
       }, function(failResp){
         toastr.error("Could not create program", failResp.data);
+      });
+    }
+
+    $scope.get_prog_managers = function() {
+      AdminProgramManagersFactory.getAll(function(successResp){
+        $scope.prog_managers = successResp.data;
+      }, function(failResp){
+        toastr.error("Could not retrieve program managers", failResp.data);
       });
     }
 
@@ -41,11 +53,7 @@ app
 
     $scope.edit_program = function(){
       $scope.get_program();
-      AdminProgramManagersFactory.getAll(function(successResp){
-        $scope.prog_managers = successResp.data;
-      }, function(failResp){
-        toastr.error("Could not retrieve program managers", failResp.data);
-      });
+      $scope.get_prog_managers();
     }
 
     $scope.destroy_program = function(program) {
