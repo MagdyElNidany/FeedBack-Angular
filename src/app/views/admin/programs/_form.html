@@ -1,0 +1,6 @@
+<form ng-submit="program.id ? update_program(program) : create_program(program)">
+  <label for="name">Name</label>
+  <input type="text" name="program[name]" id="program_name" ng-model="program.name" />
+  
+  <button type="submit">Save</button>
+</form>

@@ -1,2 +1,2 @@
 var app = angular
-  .module('feedbackapp', ['ng-token-auth', 'ui.router']);
+  .module('feedbackapp', ['ng-token-auth', 'ui.router', 'ipCookie', 'toastr']);

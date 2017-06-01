@@ -36,13 +36,32 @@ app
         controller: 'AdminAuthenticationCtrl'
       }).state('admin.mentor_invitation', {
         url: '/mentor/invite',
-        templateUrl: 'app/views/admin/mentors/invite.html'
+        templateUrl: 'app/views/admin/mentors/invite.html',
+        controller: 'AdminInvitationsCtrl'
       }).state('admin.prog_manager_invitation', {
         url: '/prog_managers/invite',
-        templateUrl: 'app/views/admin/prog_managers/invite.html'
+        templateUrl: 'app/views/admin/prog_managers/invite.html',
+        controller: 'AdminInvitationsCtrl'
       }).state('admin.attendee_invitation', {
-          url: '/attendees/invite',
-          templateUrl: 'app/views/admin/attendees/invite.html'
+        url: '/attendees/invite',
+        templateUrl: 'app/views/admin/attendees/invite.html',
+        controller: 'AdminInvitationsCtrl'
+      }).state('admin.programs', {
+        url: '/programs',
+        templateUrl: 'app/views/admin/programs/index.html',
+        controller: 'AdminProgramsCtrl'
+      }).state('admin.program', {
+        url: '/program/:id',
+        templateUrl: 'app/views/admin/programs/show.html',
+        controller: 'AdminProgramsCtrl'
+      }).state('admin.new_program', {
+        url: '/program/new',
+        templateUrl: 'app/views/admin/programs/new.html',
+        controller: 'AdminProgramsCtrl'
+      }).state('admin.edit_program', {
+        url: '/program/:id/edit',
+        templateUrl: 'app/views/admin/programs/edit.html',
+        controller: 'AdminProgramsCtrl'
       });
 
     $stateProvider
