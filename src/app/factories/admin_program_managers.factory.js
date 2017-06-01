@@ -1,8 +1,8 @@
 var app = angular
   .module('feedbackapp');
 
-app.factory('AdminProgramsFactory', function($http) {
-  var apiUrl = 'http://localhost:3000/admin/programs/';
+app.factory('AdminProgramManagersFactory', function($http) {
+  var apiUrl = 'http://localhost:3000/admin/prog_managers/';
 
   var model = {
     getAll: function(success, fail){
@@ -20,14 +20,14 @@ app.factory('AdminProgramsFactory', function($http) {
       });
     },
     create: function(model, success, fail){
-      $http.post(apiUrl, { program: model }).then(function(resp){
+      $http.post(apiUrl, { prog_manager: model }).then(function(resp){
         success(resp);
       }).catch(function(resp){
         fail(resp);
       })
     },
     update: function(model, success, fail){
-      $http.put(apiUrl + model.id, { program: model }).then(function(resp){
+      $http.put(apiUrl + model.id, { prog_manager: model }).then(function(resp){
         success(resp);
       }).catch(function(resp){
         fail(resp);
