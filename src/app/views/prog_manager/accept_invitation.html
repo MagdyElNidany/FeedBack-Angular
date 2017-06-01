@@ -1,0 +1,11 @@
+<form ng-submit="submitForm(progManager)">
+  <label for="first_name">Name</label>
+  <input id="first_name" type="text" ng-model="progManager.name" />
+
+  <label for="password">Password</label>
+  <input id="password" type="password" ng-model="progManager.password" />
+
+  <label for="confirm_password">Confirm Password</label>
+  <input id="confirm_password" type="password" ng-model="progManager.password_confirmation" />
+  <button type="submit">Submit</button>
+</form>

@@ -1,7 +1,7 @@
 var app = angular
   .module('feedbackapp');
 
-app.controller('AttendeesCtrl', function($scope, $state, $stateParams, $http, $log) {
+app.controller('InvitationsCtrl', function($scope, $state, $stateParams, $http, $log) {
   $scope.InfoPage = {};
   $log.debug("HELLO")
   $scope.submitForm = function(attendee) {

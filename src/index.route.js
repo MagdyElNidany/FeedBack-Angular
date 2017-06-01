@@ -3,85 +3,87 @@ var app = angular
 
 app
   .config(function($stateProvider, $urlRouterProvider) {
-      $stateProvider
-        .state('home', {
-          url: '/',
-          templateUrl: 'app/views/home/index.html'
-        });
-      $stateProvider
-        .state('prog_manager_invitation', {
-          url: '/admin/prog_managers/invite',
-          templateUrl: 'app/views/admin/prog_managers/invite.html'
-        });
-      $stateProvider
-        .state('prog_manager_accept_invitation', {
-          url: '/prog_manager/invitation/accept/:token',
-          templateUrl: 'app/views/prog_managers/accept_invitation.html'
-        });
-      $stateProvider
-        .state('admin_signin', {
-          url: '/admin/signin',
-          templateUrl: 'app/views/admin/authentication/signin.html'
-        });
-      $stateProvider
-        .state('admin_signout', {
-          url: '/admin/signout',
-          templateUrl: 'app/views/admin/authentication/signout.html'
-        });
-      $stateProvider
-        .state('signin', {
-          url: '/signin',
-          templateUrl: 'app/views/attendees/authentication/signin.html'
-        });
-      $stateProvider
-        .state('mentor_invitation', {
-          url: '/admin/mentor/invite',
-          templateUrl: 'app/views/admin/mentors/invite.html'
-        });
-      $stateProvider
-        .state('mentor_accept_invitation', {
-          url: '/mentor/invitation/accept/:token',
-          templateUrl: 'app/views/mentors/accept_invitation.html'
-        });
-      $stateProvider
-        .state('mentor_signin', {
-          url: '/mentors/signin',
-          templateUrl: 'app/views/mentors/authentication/signin.html'
-        });
-      $stateProvider
-        .state('mentor_signout', {
-          url: '/mentors/signout',
-          templateUrl: 'app/views/mentors/authentication/signout.html'
-        });
-      // $stateProvider
-      //   .state('prog_manager_invitation', {
-      //     url: '/admin/prog_managers/invite',
-      //     templateUrl: 'app/views/admin/prog_managers/invite.html'
-      //   });
-      $stateProvider
-        .state('mentor_program_page', {
-          url: '/mentors/program_page',
-          templateUrl: 'app/views/mentors/program_page.html'
-        });
-      $stateProvider
-        .state('prog_manager_signin', {
-          url: '/prog_managers/signin',
-          templateUrl: 'app/views/prog_managers/authentication/signin.html'
-        });
-        $stateProvider
-        .state('prog_manager_signout', {
-          url: '/prog_managers/signout',
-          templateUrl: 'app/views/prog_managers/authentication/signout.html'
-        });
-      $stateProvider
-          .state('attendee_invitation', {
-            url: '/admin/attendees/invite',
-            templateUrl: 'app/views/admin/attendees/invite.html'
-        });
-      $stateProvider
-          .state('attendee_accept_invitation', {
-            url: '/attendee/invitation/accept/:token',
-            templateUrl: 'app/views/attendees/accept_invitation.html'
-        });
-      $urlRouterProvider.otherwise('/')
+    $stateProvider
+      .state('attendee', {
+        abstract: true,
+        url: '/',
+        templateUrl: 'app/views/layouts/application_layout.html',
+        controller: 'ApplicationCtrl'
+      }).state('attendee.signin', {
+        url: '/signin',
+        templateUrl: 'app/views/attendees/authentication/signin.html',
+        controller: 'AuthenticationCtrl'
+      }).state('attendee.accept_invitation', {
+          url: '/invitation/accept/:token',
+          templateUrl: 'app/views/attendees/accept_invitation.html',
+          controller: 'InvitationsCtrl'
       });
+
+    $stateProvider
+      .state('admin', {
+        abstract: true,
+        url: '/admin',
+        templateUrl: 'app/views/layouts/admin_layout.html',
+        controller: 'AdminCtrl'
+      })
+      .state('admin.signin', {
+        url: '/signin',
+        templateUrl: 'app/views/admin/authentication/signin.html',
+        controller: 'AdminAuthenticationCtrl'
+      }).state('admin.signout', {
+        url: '/signout',
+        templateUrl: 'app/views/admin/authentication/signout.html',
+        controller: 'AdminAuthenticationCtrl'
+      }).state('admin.mentor_invitation', {
+        url: '/mentor/invite',
+        templateUrl: 'app/views/admin/mentors/invite.html'
+      }).state('admin.prog_manager_invitation', {
+        url: '/prog_managers/invite',
+        templateUrl: 'app/views/admin/prog_managers/invite.html'
+      }).state('admin.attendee_invitation', {
+          url: '/attendees/invite',
+          templateUrl: 'app/views/admin/attendees/invite.html'
+      });
+
+    $stateProvider
+      .state('prog_manager', {
+        abstract: true,
+        url: '/prog_manager',
+        templateUrl: 'app/views/layouts/prog_manager_layout.html',
+        controller: 'ProgManagerCtrl'
+      }).state('prog_manager.accept_invitation', {
+        url: '/invitation/accept/:token',
+        templateUrl: 'app/views/prog_manager/accept_invitation.html',
+        controller: 'ProgManagerInvitationsCtrl'
+      }).state('prog_manager.signin', {
+        url: '/signin',
+        templateUrl: 'app/views/prog_manager/authentication/signin.html',
+        controller: 'ProgManagerAuthenticationCtrl'
+      }).state('prog_manager.signout', {
+        url: '/signout',
+        templateUrl: 'app/views/prog_manager/authentication/signout.html',
+        controller: 'ProgManagerAuthenticationCtrl'
+      });
+
+    $stateProvider
+      .state('mentor', {
+        abstract: true,
+        url: '/mentor',
+        templateUrl: 'app/views/layouts/mentor_layout.html',
+        controller: 'MentorCtrl'
+      }).state('mentor.accept_invitation', {
+        url: '/invitation/accept/:token',
+        templateUrl: 'app/views/mentor/accept_invitation.html',
+        controller: 'MentorInvitationsCtrl'
+      }).state('mentor.signin', {
+        url: '/signin',
+        templateUrl: 'app/views/mentor/authentication/signin.html',
+        controller: 'MentorAuthenticationCtrl'
+      }).state('mentor.signout', {
+        url: '/signout',
+        templateUrl: 'app/views/mentor/authentication/signout.html',
+        controller: 'MentorAuthenticationCtrl'
+      });
+
+    $urlRouterProvider.otherwise('/')
+  });

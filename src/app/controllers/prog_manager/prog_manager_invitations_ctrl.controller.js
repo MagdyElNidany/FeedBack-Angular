@@ -1,7 +1,7 @@
 var app = angular
   .module('feedbackapp');
 
-app.controller('ProgManagersCtrl', function($scope, $state, $stateParams, $http, $log) {
+app.controller('ProgManagerInvitationsCtrl', function($scope, $state, $stateParams, $http, $log) {
   $scope.InfoPage = {};
   $scope.submitForm = function(progManager) {
     progManager.invitation_token = $stateParams.token
